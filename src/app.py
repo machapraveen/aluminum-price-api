@@ -2,8 +2,8 @@ from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 import pandas as pd
 import io
-from data_loader import load_arima_model, load_historical_data
-from forecast_utils import generate_forecast
+from .data_loader import load_arima_model, load_historical_data
+from .forecast_utils import generate_forecast
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})  # Adjust origins for production
