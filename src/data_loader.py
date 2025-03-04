@@ -2,7 +2,7 @@ import pickle
 import pandas as pd
 import os
 
-def load_arima_model(model_path='../aluminum_price_arima_model.pkl'):
+def load_arima_model(model_path='aluminum_price_arima_model.pkl'):
     try:
         if not os.path.exists(model_path):
             raise FileNotFoundError("ARIMA model file not found")
@@ -14,7 +14,7 @@ def load_arima_model(model_path='../aluminum_price_arima_model.pkl'):
         print(f"Error loading model: {str(e)}")
         return None
 
-def load_historical_data(data_path='../Aluminium_Data.csv'):
+def load_historical_data(data_path='Aluminium_Data.csv'):
     try:
         data = pd.read_csv(data_path, parse_dates=['Date'])
         data['Price'] = data['Price'].apply(
